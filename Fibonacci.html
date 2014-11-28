@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<style>
+body{
+	margin: 50px;
+}
+p{
+	font-family: courier;
+	margin-left: 55px;
+}
+h1{
+	font-family: courier;
+}
+button{
+	text-align: center;
+	font-family: courier;
+	margin-left: 55px
+}
+form{
+	font-family: courier;
+	margin-left: 55px;
+}
+
+</style>
+</head>
+
+<body>
+<h1> Fibonacci Calculator </h1>
+
+<form>	
+	Fibonacci <input id= "fibInput" type="text" name="inputform"><br>	
+</form>
+
+	<button type="button" onclick="getInput()">Fib</button>
+	<p id = "fibNumber"> -- </p>
+	
+</body>
+
+
+<script>
+
+//fn = (fn-1)+(fn-2)
+//This function calculates the Fibonacci number
+function calcFib(n){
+	if ( n <= 2){
+		return 1;
+	}
+	return calcFib(n-1) + calcFib(n-2);
+}
+
+
+function getInput(){
+	var inputValue= document.getElementById("fibInput").value;
+	document.getElementById("fibNumber").innerHTML = "Fn " + inputValue + " is " + calcFib(inputValue);
+}
+	
+</script>
+
+</html>
